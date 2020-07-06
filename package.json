@@ -3,12 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fseehawer/react-circular-slider": "^2.3.3",
+    "@react-spring/three": "^9.0.0-rc.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "drei": "0.0.60",
+    "lerp": "^1.0.3",
+    "papaparse": "^5.2.0",
+    "postprocessing": "^6.15.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-promise-suspense": "^0.3.3",
+    "react-scripts": "3.4.1",
+    "react-three-fiber": "^4.2.12",
+    "react-three-gui": "^0.1.5",
+    "react-use-gesture": "^7.0.15",
+    "styled-components": "^5.1.1",
+    "three": "^0.118.3"
   },
   "scripts": {
     "start": "react-scripts start",
