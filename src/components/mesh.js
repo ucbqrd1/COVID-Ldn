@@ -1,5 +1,5 @@
 import React, { useRef, useState, useMemo } from "react";
-import { useSpring, animated } from "@react-spring/three";
+import { useSpring, a } from "react-spring/three";
 import { useFrame } from "react-three-fiber";
 import { HTML } from "drei";
 import usePromise from "react-promise-suspense"
@@ -68,19 +68,19 @@ const DualMesh = ({ info, cam, mouse, position, rotation, colorn, colort, argsn,
                 rotation={rotation}
                 ref={mesh}>
                 {/* New Case */}
-                <animated.mesh scale={props.scale}>
+                <a.mesh scale={props.scale}>
                     <coneBufferGeometry attach="geometry" args={argsn} />
                     <meshStandardMaterial attach="material" color={colorn} transparent={false} opacity={1} />
-                </animated.mesh>
+                </a.mesh>
                 {/* Total Case */}
-                <animated.mesh
+                <a.mesh
                     onPointerOver={onPointerOver}
                     onPointerOut={onPointerOut}
                     onClick={onClick}
                     scale={props.scale}>
                     <coneBufferGeometry attach="geometry" args={argst} />
                     <meshStandardMaterial attach="material" color={colort} transparent={true} opacity={0.5} />
-                </animated.mesh>
+                </a.mesh>
                 {/* Area Tag */}
                 <HTML scaleFactor={0.1}>
                     <div className="content">
@@ -113,10 +113,10 @@ const AMesh = ({ info, position, tagPos, rotation, color, args }) => {
         <group>
             {/* New Case */}
             <mesh position={position} rotation={rotation}>
-                <animated.mesh ref={mesh}>
+                <a.mesh ref={mesh}>
                     <coneBufferGeometry attach="geometry" args={args} />
                     <meshStandardMaterial attach="material" color={color} />
-                </animated.mesh>
+                </a.mesh>
             </mesh>
             {/* Number and Date */}
             <HTML scaleFactor={0.1} position={tagPos}>
@@ -154,7 +154,7 @@ const Title = ({ mode, switchMode }) => {
     });
     return (
         <group>
-            <animated.mesh
+            <a.mesh
                 position={[-72, -12, 5]}
                 ref={ball}
                 scale={props.scale}
@@ -163,7 +163,7 @@ const Title = ({ mode, switchMode }) => {
                 onClick={() => setUpdate(true)}>
                 <sphereBufferGeometry attach="geometry" args={[1, 32, 32]} />
                 <meshPhongMaterial attach="material" color="#0d0d0d" />
-            </animated.mesh>
+            </a.mesh>
             <HTML scaleFactor={0.5} position={[-75, -15, 5]}>
                 <div style={{ fontFamily: "Helvetica", textAlign: "left" }}>
                     {mode}
